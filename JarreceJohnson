@@ -1,0 +1,135 @@
+# Chapter 8
+# Discussion question 1
+# a) Both definite and indefinite loops are used to repeat code, but in definite loops, the iteration count is fixed, while in indefinite loops, it depends on a condition.
+# b) Both loops control repetition, but a for loop is typically definite (with a set count or collection), while a while loop is often indefinite, depending on a condition to control the loop's end.
+# c) Both loops can be controlled by user input, but interactive loops rely on asking the user if they want to continue, whereas sentinel loops rely on reaching a specific value.
+# d) Both loops are used to process data until reaching an "end," but EOF loops are specifically tied to file processing, while sentinel loops depend on specific values in data. EOF loops stop upon reaching the file's end rather than a particular value in the data.
+
+# Discussion question 2
+# a)
+#   P    Q     P and Q	  not(P and Q)
+#   True	True	True	    False
+#   True	False	False	    True
+#   False	True	False	    True
+#   False	False	False	    True
+# b)
+#   P	    Q     not P	  (not P)and Q
+#   True	True	False	    False
+#   True	False	False	    False
+#   False	True	True	    True
+#   False	False	True	    False
+# c)
+#   P	    Q	not   P	    not Q	    (not P) or (not Q)
+#   True	True	False	False	    False
+#   True	False	False	True	    True
+#   False	True	True	False	    True
+#   False	False	True	True	    True
+# d)
+#   P     Q        R   	(P and Q)   (P and Q) or R
+#   True	True	True	    True	    True
+#   True	True	False	    True	    True
+#   True	False	True	    False	    True
+#   True	False	False	    False	    False
+#   False	True	True	    False	    True
+#   False	True	False	    False	    False
+#   False	False	True	    False	    True
+#   False	False	False	    False	    False
+
+# Discussion question 3
+# a)
+# Get number
+# Use a while loop to calculate the sum
+def main():
+    n = int(input("Enter a positive integer n: "))
+    sum_of_numbers = 0
+    current_number = 1
+    while current_number <= n:
+        sum_of_numbers += current_number
+        current_number += 1
+    print(f"The sum of the first {n} counting numbers is: {sum_of_numbers}")
+
+    
+main()
+
+# b)
+# Get number
+# Use while loop to calculate the sum of the first odd numbers
+def main():
+    n = int(input("Enter a positive integer n: "))
+
+    sum_of_odd_numbers = 0
+    count = 0
+    current_odd_number = 1
+
+    while count < n:
+        sum_of_odd_numbers += current_odd_number
+        current_odd_number += 2  
+        count += 1
+
+    print(f"The sum of the first {n} odd numbers is: {sum_of_odd_numbers}")
+
+main()
+
+#C
+# Use a while loop to collect numbers and calculate the sum
+# Get number
+# Add the number to the total sum
+# Check if the entered number is 999
+# Initialize the sum
+
+def sum_exclude():
+    total_sum = 0
+    print("Enter numbers to add to the sum. Enter 999 to stop (999 will not be included in the sum).")
+    while True:
+        number = int(input("Enter a number: "))
+        if number == 999:
+            break  
+        total_sum += number
+    print(f"The total sum, excluding 999, is: {total_sum}")
+
+sum_exclude()
+
+# Programming Exercise 1
+# Get input from the user
+# Handle cases where n is 1 or 2 directly
+# Calculate the numbers
+
+def Fibonacci():
+    n = int(input("Enter the position of the Fibonacci number you want to find: "))
+    if n == 1:
+        fibonacci_number = 1
+    elif n == 2:
+            fibonacci_number = 2
+    else:
+        a, b = 1, 2
+    for _ in range(3, n + 1):
+        fibonacci_number = a + b
+        a, b = b, fibonacci_number
+    print(f"The {n}th Fibonacci number is: {fibonacci_number}")
+
+Fibonacci()
+
+# Programming Exercise 4
+# Get starting value
+# Make sure it's positive integer
+# Generate the sequence
+def syracuse():
+    n = int(input("Enter a starting natural number: "))
+    if n <= 0:
+        print("Please enter a natural number greater than 0.")
+    else:
+        print("Syracuse (Collatz) sequence:")
+        print(n, end=" ")
+    while n != 1:
+        if n % 2 == 0:       
+            n = n // 2
+        else:                
+            n = 3 * n + 1
+        print(n, end=" ")
+
+    print("\nSequence complete.")
+
+syracuse()
+
+
+
